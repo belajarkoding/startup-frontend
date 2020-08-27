@@ -74,7 +74,7 @@
         <div class="text-center">
           <p class="text-white text-md">
             Already have account?
-            <nuxt-link to="login" class="no-underline text-orange-button"
+            <nuxt-link to="/login" class="no-underline text-orange-button"
               >Sign In</nuxt-link
             >.
           </p>
