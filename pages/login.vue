@@ -31,7 +31,7 @@
             <input
               type="password"
               class="auth-form focus:outline-none focus:bg-purple-hover focus:shadow-outline focus:border-purple-hover-stroke focus:text-gray-100"
-              placeholder="Type your password here"
+              placeholder="Write your password here"
               value="nasigorenglimaribbu"
             />
           </div>
@@ -41,7 +41,7 @@
             <button
               class="block w-full bg-orange-button hover:bg-orange-500 text-white font-semibold px-6 py-4 text-lg rounded-full"
             >
-              Continue Sign Up
+              Sign In
             </button>
           </div>
         </div>
