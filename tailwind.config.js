@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       colors: {
         'orange-button': '#FF872E',
+        'green-button': '#1ABC9C',
         'purple-hover': '#4C52F8',
         'purple-hover-stroke': '#8286FF',
       },
