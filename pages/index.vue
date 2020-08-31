@@ -485,7 +485,7 @@ export default {}
   background-size: 300px;
   background-repeat: no-repeat;
   background-color: #fff;
-  transform: skewY(6deg);
+  transform: skewY(4deg);
   transform-origin: bottom right;
 }
 
