@@ -80,6 +80,39 @@
         </div>
       </div>
     </section>
+    <section class="container mx-auto pt-24">
+      <div class="flex justify-between items-center">
+        <div class="w-auto">
+          <h2 class="text-3xl text-gray-900 mb-12">
+            New projects you can <br />
+            taken care of
+          </h2>
+        </div>
+        <div class="w-auto mt-10">
+          <a class="text-gray-900 hover:underline text-sm" href="">View All</a>
+        </div>
+      </div>
+      <div class="flex justify-start items-center mt-3">
+        <div class="w-1/3 p-6 border border-gray-500 rounded-20">
+          <div class="item">
+            <figure class="item-image">
+              <img
+                src="https://media.bwamicro.com/images/1593528041154.jpg"
+                alt="Graphic Designer 01"
+                class="rounded-20"
+              />
+            </figure>
+            <div class="item-meta">
+              <h4 class="text-3xl text-gray-900 mt-5">Robotic Hand</h4>
+              <p class="text-md font-light text-gray-900">
+                Creating robotic hand for better movement
+              </p>
+            </div>
+            <a class="link-wrapped" href="/courses/1"></a>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
