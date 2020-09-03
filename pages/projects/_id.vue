@@ -60,7 +60,7 @@
     <section class="container project-container mx-auto -mt-56">
       <div class="flex mt-3">
         <div class="w-3/4 mr-6">
-          <div class="bg-white p-5 mb-6 border border-gray-400 rounded-20">
+          <div class="bg-white p-3 mb-3 border border-gray-400 rounded-20">
             <figure class="item-image">
               <img src="/project-image.jpg" alt="" class="rounded-20 w-full" />
             </figure>
