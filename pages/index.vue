@@ -4,7 +4,7 @@
       <div class="header__bg"></div>
       <div class="container mx-auto relative">
         <header class="flex items-center">
-          <div style="height: 54px;" class="pr-5">
+          <div style="height: 54px" class="pr-5">
             <img src="/logo.svg" alt="logo" class="h-full" />
           </div>
           <ul class="flex items-center">
@@ -170,7 +170,7 @@
                   class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 h-3 rounded-lg"
                 >
                   <div
-                    style="width: 20%;"
+                    style="width: 20%"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-progress progress-striped"
                   ></div>
                 </div>
@@ -211,7 +211,7 @@
                   class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 h-3 rounded-lg"
                 >
                   <div
-                    style="width: 45%;"
+                    style="width: 45%"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-progress progress-striped"
                   ></div>
                 </div>
@@ -250,7 +250,7 @@
                   class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 h-3 rounded-lg"
                 >
                   <div
-                    style="width: 80%;"
+                    style="width: 80%"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-progress progress-striped"
                   ></div>
                 </div>
@@ -293,7 +293,7 @@
                   class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 h-3 rounded-lg"
                 >
                   <div
-                    style="width: 45%;"
+                    style="width: 45%"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-progress progress-striped"
                   ></div>
                 </div>
@@ -334,7 +334,7 @@
                   class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 h-3 rounded-lg"
                 >
                   <div
-                    style="width: 70%;"
+                    style="width: 70%"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-progress progress-striped"
                   ></div>
                 </div>
@@ -375,7 +375,7 @@
                   class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 h-3 rounded-lg"
                 >
                   <div
-                    style="width: 10%;"
+                    style="width: 10%"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-progress progress-striped"
                   ></div>
                 </div>
@@ -423,17 +423,17 @@
             <img
               src="/testimonial-1-icon.png"
               alt=""
-              class="w-20 mr-5 inline-block"
+              class="w-20 mr-5 inline-block testimonial-user rounded-full"
             />
             <img
               src="/testimonial-2-icon.png"
               alt=""
-              class="w-20 mr-5 inline-block"
+              class="w-20 mr-5 inline-block testimonial-user rounded-full"
             />
             <img
               src="/testimonial-3-icon.png"
               alt=""
-              class="w-20 mr-5 inline-block"
+              class="w-20 mr-5 inline-block testimonial-user active rounded-full"
             />
           </div>
         </div>
@@ -546,30 +546,31 @@ export default {}
 
 .card-project {
   transition: all 0.3s ease 0s, opacity 0.5s cubic-bezier(0.5, 0, 0, 1) 1ms;
-  &:hover {
-    box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.15);
-  }
   max-height: 445px;
   overflow: hidden;
-}
 
-.card-project .button-cta {
-  opacity: 0;
-  transition: all 300ms ease;
-}
+  .button-cta {
+    opacity: 0;
+    transition: all 300ms ease;
+  }
 
-.card-project:hover .button-cta {
-  opacity: 1;
-  transition: all 300ms ease;
-}
+  &:hover {
+    box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.15);
 
-.card-project:hover .progress-bar,
-.card-project:hover .progress-info {
-  opacity: 0;
-  height: 0px;
-  margin: 0px;
-  padding: 0px;
-  transition: all 300ms ease;
+    .button-cta {
+      opacity: 1;
+      transition: all 300ms ease;
+    }
+
+    .progress-bar,
+    .progress-info {
+      opacity: 0;
+      height: 0px;
+      margin: 0px;
+      padding: 0px;
+      transition: all 300ms ease;
+    }
+  }
 }
 
 footer {
@@ -578,5 +579,14 @@ footer {
 
 .hero-underline {
   text-decoration-color: #1abc9c;
+}
+
+.testimonial-user {
+  opacity: 0.4;
+  &.active {
+    opacity: 1;
+    border: 5px solid #fff;
+    box-shadow: 0 0 0 1px #3b41e3;
+  }
 }
 </style>
