@@ -4,7 +4,7 @@
       <div class="header__bg"></div>
       <div class="container mx-auto relative">
         <header class="flex items-center">
-          <div style="height: 54px" class="pr-5">
+          <div style="height: 54px;" class="pr-5">
             <img src="/logo.svg" alt="logo" class="h-full" />
           </div>
           <ul class="flex items-center">
@@ -147,7 +147,9 @@
         </div>
       </div>
       <div class="flex mt-3 -mx-6">
-        <div class="w-1/3 mx-6 my-4 p-5 border border-gray-500 rounded-20">
+        <div
+          class="card-project w-1/3 mx-6 my-4 p-5 border border-gray-500 rounded-20"
+        >
           <div class="item">
             <figure class="item-image">
               <img
@@ -163,24 +165,32 @@
               <p class="text-md font-light text-gray-900">
                 Creating robotic hand for better movement
               </p>
-              <div class="relative pt-4">
+              <div class="relative pt-4 progress-bar">
                 <div
                   class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 h-3 rounded-lg"
                 >
                   <div
-                    style="width: 20%"
+                    style="width: 20%;"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-progress progress-striped"
                   ></div>
                 </div>
               </div>
-              <div class="flex">
+              <div class="flex progress-info">
                 <div>20%</div>
                 <div class="ml-auto font-semibold">Rp 100.000.000</div>
               </div>
             </div>
+            <button
+              @click="$router.push({ path: '/' })"
+              class="mt-5 button-cta block w-full bg-orange-button hover:bg-green-button text-white font-semibold px-6 py-2 text-lg rounded-full"
+            >
+              Fund Now
+            </button>
           </div>
         </div>
-        <div class="w-1/3 mx-6 my-4 p-5 border border-gray-500 rounded-20">
+        <div
+          class="card-project w-1/3 mx-6 my-4 p-5 border border-gray-500 rounded-20"
+        >
           <div class="item">
             <figure class="item-image">
               <img
@@ -196,24 +206,32 @@
               <p class="text-md font-light text-gray-900">
                 Self driving drone, no worry to drive again
               </p>
-              <div class="relative pt-4">
+              <div class="relative pt-4 progress-bar">
                 <div
                   class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 h-3 rounded-lg"
                 >
                   <div
-                    style="width: 45%"
+                    style="width: 45%;"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-progress progress-striped"
                   ></div>
                 </div>
               </div>
-              <div class="flex">
+              <div class="flex progress-info">
                 <div>45%</div>
                 <div class="ml-auto font-semibold">Rp 80.000.000</div>
               </div>
+              <button
+                @click="$router.push({ path: '/' })"
+                class="mt-5 button-cta block w-full bg-orange-button hover:bg-green-button text-white font-semibold px-6 py-2 text-lg rounded-full"
+              >
+                Fund Now
+              </button>
             </div>
           </div>
         </div>
-        <div class="w-1/3 mx-6 my-4 p-5 border border-gray-500 rounded-20">
+        <div
+          class="card-project w-1/3 mx-6 my-4 p-5 border border-gray-500 rounded-20"
+        >
           <div class="item">
             <figure class="item-image">
               <img
@@ -227,26 +245,34 @@
               <p class="text-md font-light text-gray-900">
                 The new era of mechanical keyboard
               </p>
-              <div class="relative pt-4">
+              <div class="relative pt-4 progress-bar">
                 <div
                   class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 h-3 rounded-lg"
                 >
                   <div
-                    style="width: 80%"
+                    style="width: 80%;"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-progress progress-striped"
                   ></div>
                 </div>
               </div>
-              <div class="flex">
+              <div class="flex progress-info">
                 <div>80%</div>
                 <div class="ml-auto font-semibold">Rp 40.000.000</div>
               </div>
+              <button
+                @click="$router.push({ path: '/' })"
+                class="mt-5 button-cta block w-full bg-orange-button hover:bg-green-button text-white font-semibold px-6 py-2 text-lg rounded-full"
+              >
+                Fund Now
+              </button>
             </div>
           </div>
         </div>
       </div>
       <div class="flex mt-3 -mx-6">
-        <div class="w-1/3 mx-6 my-4 p-5 border border-gray-500 rounded-20">
+        <div
+          class="card-project w-1/3 mx-6 my-4 p-5 border border-gray-500 rounded-20"
+        >
           <div class="item">
             <figure class="item-image">
               <img
@@ -262,24 +288,32 @@
               <p class="text-md font-light text-gray-900">
                 Just pair to phone and ready to set
               </p>
-              <div class="relative pt-4">
+              <div class="relative pt-4 progress-bar">
                 <div
                   class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 h-3 rounded-lg"
                 >
                   <div
-                    style="width: 45%"
+                    style="width: 45%;"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-progress progress-striped"
                   ></div>
                 </div>
               </div>
-              <div class="flex">
+              <div class="flex progress-info">
                 <div>45%</div>
                 <div class="ml-auto font-semibold">Rp 55.000.000</div>
               </div>
+              <button
+                @click="$router.push({ path: '/' })"
+                class="mt-5 button-cta block w-full bg-orange-button hover:bg-green-button text-white font-semibold px-6 py-2 text-lg rounded-full"
+              >
+                Fund Now
+              </button>
             </div>
           </div>
         </div>
-        <div class="w-1/3 mx-6 my-4 p-5 border border-gray-500 rounded-20">
+        <div
+          class="card-project w-1/3 mx-6 my-4 p-5 border border-gray-500 rounded-20"
+        >
           <div class="item">
             <figure class="item-image">
               <img
@@ -295,24 +329,32 @@
               <p class="text-md font-light text-gray-900">
                 Make the room keep warm automatically
               </p>
-              <div class="relative pt-4">
+              <div class="relative pt-4 progress-bar">
                 <div
                   class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 h-3 rounded-lg"
                 >
                   <div
-                    style="width: 70%"
+                    style="width: 70%;"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-progress progress-striped"
                   ></div>
                 </div>
               </div>
-              <div class="flex">
+              <div class="flex progress-info">
                 <div>70%</div>
                 <div class="ml-auto font-semibold">Rp 75.000.000</div>
               </div>
+              <button
+                @click="$router.push({ path: '/' })"
+                class="mt-5 button-cta block w-full bg-orange-button hover:bg-green-button text-white font-semibold px-6 py-2 text-lg rounded-full"
+              >
+                Fund Now
+              </button>
             </div>
           </div>
         </div>
-        <div class="w-1/3 mx-6 my-4 p-5 border border-gray-500 rounded-20">
+        <div
+          class="card-project w-1/3 mx-6 my-4 p-5 border border-gray-500 rounded-20"
+        >
           <div class="item">
             <figure class="item-image">
               <img
@@ -328,20 +370,26 @@
               <p class="text-md font-light text-gray-900">
                 Open the door with just one tap and click
               </p>
-              <div class="relative pt-4">
+              <div class="relative pt-4 progress-bar">
                 <div
                   class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 h-3 rounded-lg"
                 >
                   <div
-                    style="width: 10%"
+                    style="width: 10%;"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-progress progress-striped"
                   ></div>
                 </div>
               </div>
-              <div class="flex">
+              <div class="flex progress-info">
                 <div>10%</div>
                 <div class="ml-auto font-semibold">Rp 35.000.000</div>
               </div>
+              <button
+                @click="$router.push({ path: '/' })"
+                class="mt-5 button-cta block w-full bg-orange-button hover:bg-green-button text-white font-semibold px-6 py-2 text-lg rounded-full"
+              >
+                Fund Now
+              </button>
             </div>
           </div>
         </div>
@@ -494,6 +542,34 @@ export default {}
   background-position: top right;
   background-repeat: no-repeat;
   background-size: 450px;
+}
+
+.card-project {
+  transition: all 0.3s ease 0s, opacity 0.5s cubic-bezier(0.5, 0, 0, 1) 1ms;
+  &:hover {
+    box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.15);
+  }
+  max-height: 445px;
+  overflow: hidden;
+}
+
+.card-project .button-cta {
+  opacity: 0;
+  transition: all 300ms ease;
+}
+
+.card-project:hover .button-cta {
+  opacity: 1;
+  transition: all 300ms ease;
+}
+
+.card-project:hover .progress-bar,
+.card-project:hover .progress-info {
+  opacity: 0;
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+  transition: all 300ms ease;
 }
 
 footer {
