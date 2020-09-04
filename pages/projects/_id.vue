@@ -67,9 +67,9 @@
           </div>
           <div class="flex -mx-2">
             <div
-              class="w-1/4 bg-white m-2 p-2 border border-gray-400 rounded-20"
+              class="relative w-1/4 bg-white m-2 p-2 border border-gray-400 rounded-20"
             >
-              <figure class="item-image">
+              <figure class="item-thumbnail">
                 <img
                   src="/project-slider-1.jpg"
                   alt=""
@@ -78,9 +78,9 @@
               </figure>
             </div>
             <div
-              class="w-1/4 bg-white m-2 p-2 border border-gray-400 rounded-20"
+              class="relative w-1/4 bg-white m-2 p-2 border border-gray-400 rounded-20"
             >
-              <figure class="item-image">
+              <figure class="item-thumbnail">
                 <img
                   src="/project-slider-2.jpg"
                   alt=""
@@ -89,9 +89,9 @@
               </figure>
             </div>
             <div
-              class="w-1/4 bg-white m-2 p-2 border border-gray-400 rounded-20"
+              class="relative w-1/4 bg-white m-2 p-2 border border-gray-400 rounded-20"
             >
-              <figure class="item-image">
+              <figure class="item-thumbnail">
                 <img
                   src="/project-slider-3.jpg"
                   alt=""
@@ -100,9 +100,9 @@
               </figure>
             </div>
             <div
-              class="w-1/4 bg-white m-2 p-2 border border-gray-400 rounded-20"
+              class="relative w-1/4 bg-white m-2 p-2 border border-gray-400 rounded-20"
             >
-              <figure class="item-image">
+              <figure class="item-thumbnail">
                 <img
                   src="/project-slider-4.jpg"
                   alt=""
@@ -119,8 +119,26 @@
           >
             <h3>Project Leader:</h3>
 
+            <div class="flex mt-3">
+              <div class="w-1/4">
+                <img
+                  src="/testimonial-1-icon.png"
+                  alt=""
+                  class="w-full inline-block rounded-full"
+                />
+              </div>
+              <div class="w-3/4 ml-5 mt-1">
+                <div class="font-semibold text-xl text-gray-800">
+                  Julia Keeva
+                </div>
+                <div class="font-light text-md text-gray-400">
+                  28.093 backer
+                </div>
+              </div>
+            </div>
+
             <h4 class="mt-5 font-semibold">What will you get:</h4>
-            <ul class="list-disc ml-5 mt-3">
+            <ul class="list-check mt-3">
               <li>Equity of the startup directly from the founder</li>
               <li>Special service or product that startup has</li>
               <li>You can also sell your equity once the startup going IPO</li>
@@ -132,7 +150,7 @@
               value=""
             />
             <button
-              @click="$router.push({ path: '/' })"
+              @click="$router.push({ path: '/fund-success' })"
               class="mt-3 button-cta block w-full bg-orange-button hover:bg-green-button text-white font-medium px-6 py-3 text-md rounded-full"
             >
               Fund Now
@@ -326,6 +344,27 @@ footer {
     opacity: 1;
     border: 5px solid #fff;
     box-shadow: 0 0 0 1px #3b41e3;
+  }
+}
+
+.list-check {
+  li {
+    background: url('/icon-checklist.svg') no-repeat left 8px;
+    padding: 6px 0px 3px 28px;
+  }
+}
+
+.item-thumbnail:hover {
+  background-color: #ff872e;
+  border-radius: 20px;
+  &:after {
+    position: absolute;
+    top: 38%;
+    left: 41%;
+    content: url('/icon-thumbnail-hover.svg');
+  }
+  img {
+    opacity: 0.3;
   }
 }
 </style>
