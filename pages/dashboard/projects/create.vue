@@ -58,63 +58,94 @@
       </div>
     </section>
     <section class="container mx-auto pt-8">
-      <div class="flex justify-between items-center mb-6">
-        <div class="w-3/4 mr-6">
+      <div class="flex justify-between items-center">
+        <div class="w-full mr-6">
           <h2 class="text-4xl text-gray-900 mb-2 font-medium">Dashboard</h2>
-          <ul class="flex mt-2">
-            <li class="mr-6">
-              <a class="text-gray-800 font-bold" href="#"> Your Projects </a>
-            </li>
-            <li class="mr-6">
-              <nuxt-link
-                class="text-gray-500 hover:text-gray-800"
-                to="/dashboard/transactions"
-              >
-                Your Transactions
-              </nuxt-link>
-            </li>
-          </ul>
+        </div>
+      </div>
+      <div class="flex justify-between items-center">
+        <div class="w-3/4 mr-6">
+          <h3 class="text-2xl text-gray-900 mb-4">Create New Projects</h3>
         </div>
         <div class="w-1/4 text-right">
           <nuxt-link
-            to="/dashboard/projects/create"
-            class="bg-orange-button hover:bg-green-button text-white font-bold py-4 px-4 rounded inline-flex items-center"
+            to="/dashboard/projects"
+            class="bg-green-button hover:bg-green-button text-white font-bold px-4 py-1 rounded inline-flex items-center"
           >
-            + Create Campaign
+            Save
           </nuxt-link>
         </div>
       </div>
-      <hr />
       <div class="block mb-2">
-        <div class="w-full lg:max-w-full lg:flex mb-4" v-for="i in 5" :key="i">
+        <div class="w-full lg:max-w-full lg:flex mb-4">
           <div
-            class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-            style="background-color: #bbb"
-          ></div>
-          <nuxt-link
-            :to="'/dashboard/projects/' + i"
-            class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-8 flex flex-col justify-between leading-normal"
+            class="w-full border border-gray-400 bg-white rounded p-8 flex flex-col justify-between leading-normal"
           >
-            <div class="mb-8">
-              <div class="text-gray-900 font-bold text-xl mb-1">
-                Cari Uang Buat Gunpla
+            <form class="w-full">
+              <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                  <label
+                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  >
+                    Campaign Name
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    type="text"
+                    placeholder="Contoh: Demi Gunpla Demi Istri"
+                  />
+                </div>
+                <div class="w-full md:w-1/2 px-3">
+                  <label
+                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  >
+                    Price
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    type="number"
+                    placeholder="Contoh: 200000"
+                  />
+                </div>
+                <div class="w-full px-3">
+                  <label
+                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 mt-3"
+                  >
+                    Short Description
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    type="text"
+                    placeholder="Deskripsi singkat mengenai projectmu"
+                  />
+                </div>
+                <div class="w-full px-3">
+                  <label
+                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  >
+                    What will backers get
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    type="text"
+                    placeholder="Contoh: Ayam, Nasi Goreng, Piring"
+                  />
+                </div>
+                <div class="w-full px-3">
+                  <label
+                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  >
+                    Description
+                  </label>
+                  <textarea
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    type="text"
+                    placeholder="Isi deskripsi panjang untuk projectmu"
+                  ></textarea>
+                </div>
               </div>
-              <p class="text-sm text-gray-600 flex items-center mb-2">
-                Rp. 200.000.000 &middot; 80%
-              </p>
-              <p class="text-gray-700 text-base">
-                With N-key rollover (NKRO on wired mode only) you can register
-                as many keys as you can press at once without missing out
-                characters. It allows to use all the same media keys as
-                conventional macOS.
-              </p>
-            </div>
-            <div class="flex items-center">
-              <button class="bg-green-button text-white py-2 px-4 rounded">
-                Detail
-              </button>
-            </div>
-          </nuxt-link>
+            </form>
+          </div>
         </div>
       </div>
     </section>
