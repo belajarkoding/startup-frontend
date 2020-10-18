@@ -2,59 +2,7 @@
   <div class="project-page">
     <section class="dashboard-header pt-5">
       <div class="container mx-auto relative">
-        <header class="flex items-center">
-          <div style="height: 54px" class="pr-5">
-            <img src="/logo.svg" alt="logo" class="h-full" />
-          </div>
-          <ul class="flex items-center">
-            <li>
-              <a
-                class="text-white hover:text-teal-500 text-lg px-4 py-3"
-                href="/"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                class="text-white hover:text-teal-500 text-lg px-4 py-3"
-                href="/pricing"
-                >Project</a
-              >
-            </li>
-            <li>
-              <a
-                class="text-white hover:text-teal-500 text-lg px-4 py-3"
-                href="/features"
-                >Features</a
-              >
-            </li>
-            <li>
-              <a
-                class="text-white hover:text-teal-500 text-lg px-4 py-3"
-                href="/story"
-                >Success Stories</a
-              >
-            </li>
-          </ul>
-          <ul class="flex ml-auto items-center mt-2">
-            <li>
-              <nuxt-link
-                to="/register"
-                class="inline-block bg-transparent border-white border hover:bg-white hover:bg-opacity-25 text-white font-light w-40 text-center px-6 py-1 text-lg rounded-full mr-4"
-              >
-                Sign Up
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link
-                to="/login"
-                class="inline-block bg-transparent border-white border hover:bg-white hover:bg-opacity-25 text-white font-light w-40 text-center px-6 py-1 text-lg rounded-full"
-              >
-                My Account
-              </nuxt-link>
-            </li>
-          </ul>
-        </header>
+        <Navbar />
       </div>
     </section>
     <section class="container mx-auto pt-8">
@@ -69,7 +17,7 @@
         </div>
         <div class="w-1/4 text-right">
           <nuxt-link
-            to="/dashboard/projects"
+            to="/dashboard/projects/1"
             class="bg-green-button hover:bg-green-button text-white font-bold px-4 py-1 rounded inline-flex items-center"
           >
             Save
@@ -151,45 +99,7 @@
     </section>
     <div class="cta-clip -mt-20"></div>
     <section class="call-to-action bg-purple-progress pt-64 pb-10"></section>
-    <footer class="bg-purple-progress py-20 text-white text-lg">
-      <div class="container mx-auto">
-        <div class="sm:flex mb-4">
-          <div class="sm:w-1/2 sm:mt-0 mt-8 h-auto">
-            <img src="/logo-footer.svg" alt="" class="mb-3" />
-            <p class="font-light">
-              Helps people execute their <br />bright ideas
-            </p>
-          </div>
-          <div class="sm:w-1/4 h-auto">
-            <div class="mb-8 font-bold">Explore</div>
-            <ul class="font-light">
-              <li class="mb-3">Our Services</li>
-              <li class="mb-3">Equity System</li>
-              <li class="mb-3">Refund</li>
-              <li class="mb-3">Shareholder</li>
-            </ul>
-          </div>
-          <div class="sm:w-1/4 h-auto">
-            <div class="mb-8 font-bold">Investor</div>
-            <ul class="font-light">
-              <li class="mb-3">My Account</li>
-              <li class="mb-3">Top Startups</li>
-              <li class="mb-3">How-to Tutorials</li>
-              <li class="mb-3">Withdrawl</li>
-            </ul>
-          </div>
-          <div class="sm:w-1/4 h-auto">
-            <div class="mb-8 font-bold">Office</div>
-            <ul class="font-light">
-              <li class="mb-3">+021 2208 1996</li>
-              <li class="mb-3">KBP, Bandung</li>
-              <li class="mb-3">No.12 (Backer)</li>
-              <li class="mb-3">support@backer.id</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </div>
 </template>
 
