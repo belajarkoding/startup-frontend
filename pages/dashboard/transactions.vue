@@ -28,20 +28,33 @@
       </div>
       <hr />
       <div class="block mb-2">
-        <div class="w-full lg:max-w-full lg:flex mb-4" v-for="i in 5" :key="i">
+        <div
+          class="w-full lg:max-w-full lg:flex mb-4"
+          v-for="transaction in transactions.data"
+          :key="transaction.id"
+        >
           <div
-            class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-            style="background-color: #bbb"
+            class="h-48 lg:h-auto lg:w-64 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+            :style="
+              'background-color: #bbb; background-position: center; background-image: url(' +
+              $axios.defaults.baseURL +
+              '/' +
+              transaction.campaign.image_url +
+              ')'
+            "
           ></div>
           <div
             class="w-full border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-8 flex flex-col justify-between leading-normal"
           >
             <div>
               <div class="text-gray-900 font-bold text-xl mb-1">
-                Cari Uang Buat Gunpla
+                {{ transaction.campaign.name }}
               </div>
               <p class="text-sm text-gray-600 flex items-center mb-2">
-                Rp. 200.000.000 &middot; 12 September 2020
+                Rp.
+                {{ new Intl.NumberFormat().format(transaction.amount) }}
+                &middot; {{ transaction.created_at }} &middot;
+                {{ transaction.status }}
               </p>
             </div>
           </div>
@@ -57,6 +70,10 @@
 <script>
 export default {
   middleware: 'auth',
+  async asyncData({ $axios }) {
+    const transactions = await $axios.$get('/api/v1/transactions')
+    return { transactions }
+  },
 }
 </script>
 
