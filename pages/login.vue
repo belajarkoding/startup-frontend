@@ -28,6 +28,7 @@
               >Password</label
             >
             <input
+              @keyup.enter="userLogin"
               type="password"
               v-model="login.password"
               class="auth-form focus:outline-none focus:bg-purple-hover focus:shadow-outline focus:border-purple-hover-stroke focus:text-gray-100"
@@ -74,7 +75,7 @@ export default {
     async userLogin() {
       try {
         let response = await this.$auth.loginWith('local', { data: this.login })
-        this.$auth.setUser(response.data)
+        this.$auth.setUser(response.data.data)
         console.log(response)
       } catch (err) {
         console.log(err)

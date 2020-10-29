@@ -55,7 +55,7 @@
                   {{ campaign.data.user.name }}
                 </div>
                 <div class="font-light text-md text-gray-400">
-                  28.093 backer
+                  {{ campaign.data.backer_count }} backer
                 </div>
               </div>
             </div>
