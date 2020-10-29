@@ -94,11 +94,11 @@
           >
         </div>
       </div>
-      <div class="flex mt-3 -mx-6">
+      <div class="grid grid-cols-3 gap-4 mt-3">
         <div
           v-for="campaign in campaigns.data"
           :key="campaign.id"
-          class="card-project w-1/3 mx-6 my-4 p-5 border border-gray-500 rounded-20"
+          class="card-project w-full p-5 border border-gray-500 rounded-20"
         >
           <div class="item">
             <figure class="item-image">
@@ -255,7 +255,7 @@ export default {
 
 .card-project {
   transition: all 0.3s ease 0s, opacity 0.5s cubic-bezier(0.5, 0, 0, 1) 1ms;
-  max-height: 435px;
+  max-height: 445px;
   overflow: hidden;
 
   .button-cta {
