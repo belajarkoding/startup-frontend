@@ -10,11 +10,7 @@
         <div class="w-3/4 mr-6">
           <div class="bg-white p-3 mb-3 border border-gray-400 rounded-20">
             <figure class="item-image">
-              <img
-                :src="$axios.defaults.baseURL + '/' + campaign.data.image_url"
-                alt=""
-                class="rounded-20 w-full"
-              />
+              <img :src="default_image" alt="" class="rounded-20 w-full" />
             </figure>
           </div>
           <div class="flex -mx-2">
@@ -23,9 +19,12 @@
               :key="image.image_url"
               class="relative w-1/4 bg-white m-2 p-2 border border-gray-400 rounded-20"
             >
-              <figure class="item-thumbnail">
+              <figure class="item-thumbnail cursor-pointer">
                 <img
                   :src="$axios.defaults.baseURL + '/' + image.image_url"
+                  @click="
+                    changeImage($axios.defaults.baseURL + '/' + image.image_url)
+                  "
                   alt=""
                   class="rounded-20 w-full"
                 />
@@ -66,18 +65,29 @@
                 {{ perk }}
               </li>
             </ul>
-            <input
-              type="number"
-              class="border border-gray-500 block w-full px-6 py-3 mt-4 rounded-full text-gray-800 transition duration-300 ease-in-out focus:outline-none focus:shadow-outline"
-              placeholder="Amount in Rp"
-              value=""
-            />
-            <button
-              @click="$router.push({ path: '/fund-success' })"
-              class="mt-3 button-cta block w-full bg-orange-button hover:bg-green-button text-white font-medium px-6 py-3 text-md rounded-full"
-            >
-              Fund Now
-            </button>
+            <template v-if="this.$store.state.auth.loggedIn">
+              <input
+                type="number"
+                class="border border-gray-500 block w-full px-6 py-3 mt-4 rounded-full text-gray-800 transition duration-300 ease-in-out focus:outline-none focus:shadow-outline"
+                placeholder="Amount in Rp"
+                value=""
+                @keyup.enter="fund"
+              />
+              <button
+                @click="fund"
+                class="mt-3 button-cta block w-full bg-orange-button hover:bg-green-button text-white font-medium px-6 py-3 text-md rounded-full"
+              >
+                Fund Now
+              </button>
+            </template>
+            <template v-else>
+              <button
+                @click="$router.push({ path: '/login' })"
+                class="mt-3 button-cta block w-full bg-orange-button hover:bg-green-button text-white font-medium px-6 py-3 text-md rounded-full"
+              >
+                Sign in to Fund
+              </button>
+            </template>
           </div>
         </div>
       </div>
@@ -136,6 +146,23 @@ export default {
   async asyncData({ $axios, params }) {
     const campaign = await $axios.$get('/api/v1/campaigns/' + params.id)
     return { campaign }
+  },
+  data() {
+    return {
+      default_image: '',
+    }
+  },
+  methods: {
+    async fund() {
+      // TODO : Checkout
+    },
+    changeImage(url) {
+      this.default_image = url
+    },
+  },
+  mounted() {
+    this.default_image =
+      this.$axios.defaults.baseURL + '/' + this.campaign.data.image_url
   },
 }
 </script>
