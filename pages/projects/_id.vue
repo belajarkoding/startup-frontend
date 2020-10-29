@@ -114,7 +114,7 @@
               }}%
             </div>
             <div class="ml-auto font-semibold text-2xl">
-              Rp {{ campaign.data.goal_amount }}
+              Rp {{ new Intl.NumberFormat().format(campaign.data.goal_amount) }}
             </div>
           </div>
 

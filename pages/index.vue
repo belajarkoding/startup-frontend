@@ -134,7 +134,7 @@
                   {{ (campaign.current_amount / campaign.goal_amount) * 100 }}%
                 </div>
                 <div class="ml-auto font-semibold">
-                  Rp {{ campaign.goal_amount }}
+                  Rp {{ new Intl.NumberFormat().format(campaign.goal_amount) }}
                 </div>
               </div>
             </div>
