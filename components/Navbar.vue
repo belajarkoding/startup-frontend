@@ -13,17 +13,23 @@
         </nuxt-link>
       </li>
       <li>
-        <a class="text-white hover:text-teal-500 text-lg px-4 py-3" href="#"
+        <a
+          class="text-white hover:text-teal-500 text-lg px-4 py-3"
+          href="#projects"
           >Project</a
         >
       </li>
       <li>
-        <a class="text-white hover:text-teal-500 text-lg px-4 py-3" href="#"
+        <a
+          class="text-white hover:text-teal-500 text-lg px-4 py-3"
+          href="#features"
           >Features</a
         >
       </li>
       <li>
-        <a class="text-white hover:text-teal-500 text-lg px-4 py-3" href="#"
+        <a
+          class="text-white hover:text-teal-500 text-lg px-4 py-3"
+          href="#testimonials"
           >Success Stories</a
         >
       </li>

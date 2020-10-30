@@ -8,10 +8,10 @@
           best idea and innovation
         </h1>
         <button
-          @click="$router.push({ path: '/upload' })"
+          @click="$router.push({ path: '/register' })"
           class="inline-block bg-orange-button hover:bg-green-button text-white font-semibold px-6 py-4 mt-8 text-lg rounded-full"
         >
-          Getting Start
+          Getting Started
         </button>
       </div>
     </div>

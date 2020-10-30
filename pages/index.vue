@@ -15,12 +15,12 @@
               Fund the best idea to become <br />
               a real product and be the contributor
             </p>
-            <button
-              @click="$router.push({ path: '/' })"
-              class="block bg-orange-button hover:bg-green-button text-white font-semibold px-12 py-3 text-xl rounded-full"
+            <a
+              href="#projects"
+              class="bg-orange-button hover:bg-green-button text-white font-semibold px-12 py-3 text-xl rounded-full"
             >
               Find a Project
-            </button>
+            </a>
           </div>
           <div class="w-1/2 flex justify-center">
             <img src="/hero-image@2x.png" alt="crowdfunding project" />
@@ -28,7 +28,7 @@
         </div>
       </div>
     </section>
-    <section class="container mx-auto pt-24">
+    <section class="container mx-auto pt-24" id="features">
       <div class="flex justify-between items-center mb-10">
         <div class="w-auto">
           <h2 class="text-3xl text-gray-900 mb-8">
@@ -80,7 +80,7 @@
         </div>
       </div>
     </section>
-    <section class="container mx-auto pt-24">
+    <section class="container mx-auto pt-24" id="projects">
       <div class="flex justify-between items-center">
         <div class="w-auto">
           <h2 class="text-3xl text-gray-900 mb-8">
@@ -153,7 +153,7 @@
         </div>
       </div>
     </section>
-    <section class="container mx-auto pt-24">
+    <section class="container mx-auto pt-24" id="testimonials">
       <div class="flex justify-between items-center">
         <div class="w-auto">
           <h2 class="text-3xl text-gray-900 mb-8">
