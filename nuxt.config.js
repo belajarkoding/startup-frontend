@@ -60,7 +60,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'http://backer-backend.buildwithangga.id',
+    baseURL: 'https://backer-backend.buildwithangga.id',
   },
   /*
    ** Build configuration
