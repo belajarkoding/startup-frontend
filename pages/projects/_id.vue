@@ -35,7 +35,7 @@
         <div class="w-1/4">
           <div
             class="bg-white w-full p-5 border border-gray-400 rounded-20 sticky"
-            style="top: 15px"
+            style="top: 15px;"
           >
             <h3>Project Leader:</h3>
 
@@ -216,7 +216,7 @@ export default {
 
 .card-project {
   transition: all 0.3s ease 0s, opacity 0.5s cubic-bezier(0.5, 0, 0, 1) 1ms;
-  max-height: 470px;
+  max-height: 485px;
   overflow: hidden;
 
   .button-cta {

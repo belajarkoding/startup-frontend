@@ -112,7 +112,7 @@ export default {
 
 .card-project {
   transition: all 0.3s ease 0s, opacity 0.5s cubic-bezier(0.5, 0, 0, 1) 1ms;
-  max-height: 445px;
+  max-height: 485px;
   overflow: hidden;
 
   .button-cta {
