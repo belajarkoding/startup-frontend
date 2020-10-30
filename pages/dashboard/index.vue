@@ -40,13 +40,13 @@
           :key="campaign.id"
         >
           <div
-            class="h-48 lg:h-auto lg:w-64 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+            class="border h-48 lg:h-auto lg:w-64 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
             :style="
-              'background-color: #bbb; background-position: center; background-image: url(' +
+              'background-color: #bbb; background-position: center; background-image: url(\'' +
               $axios.defaults.baseURL +
               '/' +
               campaign.image_url +
-              ')'
+              '\')'
             "
           ></div>
           <nuxt-link
