@@ -66,8 +66,8 @@ export default {
   data() {
     return {
       login: {
-        email: '',
-        password: '',
+        email: 'julia@bwa.com',
+        password: 'password',
       },
     }
   },

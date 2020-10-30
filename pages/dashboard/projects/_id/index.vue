@@ -64,21 +64,27 @@
         </div>
       </div>
       <div class="flex justify-between items-center">
-        <div class="w-3/4 mr-6">
+        <div class="w-2/4 mr-6">
           <h3 class="text-2xl text-gray-900 mb-4 mt-5">Gallery</h3>
         </div>
-        <div class="w-1/4 text-right">
-          <a
-            href="#"
-            class="bg-green-button hover:bg-green-button text-white font-bold px-4 py-1 rounded inline-flex items-center"
+        <div class="w-2/4 text-right">
+          <input
+            type="file"
+            ref="file"
+            @change="selectFile"
+            class="border p-1 rounded overflow-hidden"
+          />
+          <button
+            @click="upload"
+            class="bg-green-button hover:bg-green-button text-white font-bold px-4 py-2 rounded inline-flex items-center"
           >
             Upload
-          </a>
+          </button>
         </div>
       </div>
-      <div class="flex -mx-2">
+      <div class="grid grid-cols-4 gap-4 -mx-2">
         <div
-          class="relative w-1/4 bg-white m-2 p-2 border border-gray-400 rounded"
+          class="relative w-full bg-white m-2 p-2 border border-gray-400 rounded"
           v-for="image in campaign.data.images"
           :key="image.image_url"
         >
@@ -111,9 +117,7 @@
               </div>
               <p class="text-sm text-gray-600 flex items-center mb-2">
                 Rp.
-                {{
-                  new Intl.NumberFormat().format(transaction.amount)
-                }}
+                {{ new Intl.NumberFormat().format(transaction.amount) }}
                 &middot; {{ transaction.created_at }}
               </p>
             </div>
@@ -136,6 +140,47 @@ export default {
       '/api/v1/campaigns/' + params.id + '/transactions'
     )
     return { campaign, transactions }
+  },
+  data() {
+    return {
+      selectedFiles: undefined,
+    }
+  },
+  methods: {
+    selectFile() {
+      this.selectedFiles = this.$refs.file.files
+    },
+    async load() {
+      const campaign = await this.$axios.$get(
+        '/api/v1/campaigns/' + this.$route.params.id
+      )
+      this.campaign = campaign
+    },
+    async upload(file) {
+      let formData = new FormData()
+
+      formData.append('campaign_id', this.$route.params.id)
+      formData.append('file', this.selectedFiles.item(0))
+      formData.append('is_primary', true)
+
+      try {
+        let response = await this.$axios.post(
+          '/api/v1/campaign-images',
+          formData,
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          }
+        )
+        console.log(response)
+
+        this.load()
+        this.selectedFiles = undefined
+      } catch (err) {
+        console.log(err)
+      }
+    },
   },
 }
 </script>

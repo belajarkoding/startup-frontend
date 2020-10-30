@@ -13,15 +13,17 @@
       </div>
       <div class="flex justify-between items-center">
         <div class="w-3/4 mr-6">
-          <h3 class="text-2xl text-gray-900 mb-4">Create New Projects</h3>
+          <h3 class="text-2xl text-gray-900 mb-4">
+            Edit Campaign "{{ campaign.data.name }}"
+          </h3>
         </div>
         <div class="w-1/4 text-right">
-          <nuxt-link
-            to="/dashboard/projects/1"
+          <button
+            @click="save"
             class="bg-green-button hover:bg-green-button text-white font-bold px-4 py-1 rounded inline-flex items-center"
           >
             Save
-          </nuxt-link>
+          </button>
         </div>
       </div>
       <div class="block mb-2">
@@ -41,6 +43,7 @@
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     type="text"
                     placeholder="Contoh: Demi Gunpla Demi Istri"
+                    v-model="campaign.data.name"
                   />
                 </div>
                 <div class="w-full md:w-1/2 px-3">
@@ -53,6 +56,7 @@
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     type="number"
                     placeholder="Contoh: 200000"
+                    v-model.number="campaign.data.goal_amount"
                   />
                 </div>
                 <div class="w-full px-3">
@@ -65,6 +69,7 @@
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     type="text"
                     placeholder="Deskripsi singkat mengenai projectmu"
+                    v-model="campaign.data.short_description"
                   />
                 </div>
                 <div class="w-full px-3">
@@ -77,6 +82,7 @@
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     type="text"
                     placeholder="Contoh: Ayam, Nasi Goreng, Piring"
+                    v-model="campaign.data.perks"
                   />
                 </div>
                 <div class="w-full px-3">
@@ -89,6 +95,7 @@
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     type="text"
                     placeholder="Isi deskripsi panjang untuk projectmu"
+                    v-model="campaign.data.description"
                   ></textarea>
                 </div>
               </div>
@@ -106,6 +113,32 @@
 <script>
 export default {
   middleware: 'auth',
+  async asyncData({ $axios, params }) {
+    const campaign = await $axios.$get('/api/v1/campaigns/' + params.id)
+    return { campaign }
+  },
+  methods: {
+    async save() {
+      try {
+        let response = await this.$axios.$put(
+          '/api/v1/campaigns/' + this.$route.params.id,
+          {
+            name: this.campaign.data.name,
+            short_description: this.campaign.data.short_description,
+            description: this.campaign.data.description,
+            goal_amount: this.campaign.data.goal_amount,
+            perks: this.campaign.data.perks.join(),
+          }
+        )
+        console.log(response)
+      } catch (err) {
+        console.log(err)
+      }
+    },
+    changeImage(url) {
+      this.default_image = url
+    },
+  },
 }
 </script>
 

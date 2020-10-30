@@ -1,6 +1,6 @@
 <template>
   <header class="flex items-center">
-    <div style="height: 54px" class="pr-5">
+    <div style="height: 54px;" class="pr-5">
       <img src="/logo.svg" alt="logo" class="h-full" />
     </div>
     <ul class="flex items-center">
@@ -54,6 +54,14 @@
         <button
           class="bg-white text-gray-700 font-semibold py-4 px-6 rounded inline-flex items-center"
         >
+          <img
+            v-if="$store.state.auth.user.image_url"
+            :src="
+              $axios.defaults.baseURL + '/' + $store.state.auth.user.image_url
+            "
+            alt=""
+            class="h-8 rounded-full mr-2"
+          />
           <span class="mr-1">
             {{ this.$store.state.auth.user.name }}
           </span>
@@ -67,10 +75,12 @@
             />
           </svg>
         </button>
-        <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 shadow">
+        <ul
+          class="dropdown-menu absolute hidden text-gray-700 pt-1 shadow w-full -mt-2"
+        >
           <li class="">
             <nuxt-link
-              class="rounded-t bg-white hover:bg-gray-100 hover:text-orange-500 py-2 px-4 block whitespace-no-wrap"
+              class="bg-white hover:bg-gray-100 hover:text-orange-500 py-2 px-4 block whitespace-no-wrap"
               to="/dashboard"
               >My Dashboard</nuxt-link
             >
