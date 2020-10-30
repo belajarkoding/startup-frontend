@@ -35,7 +35,7 @@
         <div class="w-1/4">
           <div
             class="bg-white w-full p-5 border border-gray-400 rounded-20 sticky"
-            style="top: 15px"
+            style="top: 15px;"
           >
             <h3>Project Leader:</h3>
 
@@ -70,7 +70,8 @@
                 type="number"
                 class="border border-gray-500 block w-full px-6 py-3 mt-4 rounded-full text-gray-800 transition duration-300 ease-in-out focus:outline-none focus:shadow-outline"
                 placeholder="Amount in Rp"
-                value=""
+                value="0"
+                v-model.number="transaction.amount"
                 @keyup.enter="fund"
               />
               <button
@@ -150,11 +151,24 @@ export default {
   data() {
     return {
       default_image: '',
+      transaction: {
+        amount: 0,
+        campaign_id: Number.parseInt(this.$route.params.id),
+      },
     }
   },
   methods: {
     async fund() {
-      // TODO : Checkout
+      try {
+        let response = await this.$axios.$post(
+          '/api/v1/transactions',
+          this.transaction
+        )
+        window.location = response.data.payment_url
+        console.log(response)
+      } catch (err) {
+        console.log(err)
+      }
     },
     changeImage(url) {
       this.default_image = url
