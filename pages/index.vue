@@ -112,7 +112,7 @@
               <h4 class="text-3xl font-medium text-gray-900 mt-5">
                 {{ campaign.name }}
               </h4>
-              <p class="text-md font-light text-gray-900">
+              <p class="text-md font-light text-gray-900 h-12">
                 {{ campaign.short_description }}
               </p>
               <div class="relative pt-4 progress-bar">
@@ -255,7 +255,7 @@ export default {
 
 .card-project {
   transition: all 0.3s ease 0s, opacity 0.5s cubic-bezier(0.5, 0, 0, 1) 1ms;
-  max-height: 445px;
+  max-height: 470px;
   overflow: hidden;
 
   .button-cta {

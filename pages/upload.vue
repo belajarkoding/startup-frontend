@@ -18,7 +18,7 @@
         </div>
       </div>
       <h2 class="font-normal mb-3 text-3xl text-white text-center">
-        Hi, Julia
+        Hi, {{ this.$store.state.auth.user.name }}
       </h2>
       <p class="text-white text-center font-light">Please upload your selfie</p>
       <div class="mb-4 mt-6">
